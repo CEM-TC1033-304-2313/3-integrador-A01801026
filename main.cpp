@@ -1,41 +1,71 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include "articulo.h"
 #include "catalogo.h"
 #include "carrito.h"
+#include "tienda.h"
+#include <string>
 
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
 
-using std:: to_string;
 
 
 int main ()
 {
-    Catalogo catalogo;
-    catalogo.busca_objetos();
+    Tienda tienda;
+    int seleccion_menu = 0;
 
-    catalogo.draw_catalogo();
+   
+    do
+    {
+        tienda.display_menu();
+        cin >> seleccion_menu;
+        if (seleccion_menu == 1)
+        {
 
-    Carrito carrito_de_compras;
-    
-    Articulo cosa1 ("00", "cosa1", "13.5", "40");
 
-    Articulo cosa2 ("01", "cosa2", "15.3", "80");
+            int end_while = -1;
+            do 
+            { 
+                cout << "\033[2J\033[1;1H";
+                int art;
+                int cant;
+                tienda.redireccionar_menu(1);
+                cout << "Producto a comprar (0  para cancelar): ";
+                cin >> art;
+                cout << "Cantidad a comprar (0 para cancelar): ";
+                cin >> cant;
+                end_while = cant;
+                tienda.modificar_stocks((art-1), cant);
+                cout << "\033[2J\033[1;1H";
+            } while (end_while != 0);
+            continue;
 
-    Articulo cosa3 ("02", "cosa3", "300", "20");
+        }
+        if (seleccion_menu == 2)
+        {
+            string a_menu = "vacio";
+            tienda.redireccionar_menu(2);
+            while (a_menu != "si")
+            {
+                cout << "¿Regresar a menu? (Ingresar si): ";
+                cin >> a_menu;
+                cout << "\033[2J\033[1;1H";
+            }
+            continue;
+        }
+        if (seleccion_menu == 3)
+        {
+            tienda.redireccionar_menu(3);
+            break;
+        }
 
-    carrito_de_compras.al_carrito(cosa1, 18);
-    carrito_de_compras.al_carrito(cosa2, 40);
-    carrito_de_compras.al_carrito(cosa3, 19);
-    carrito_de_compras.al_carrito(cosa3, 1);
-
-    carrito_de_compras.draw_carrito();
-
-    carrito_de_compras.finalizar_compra();
-    
-
+    } while ( seleccion_menu != 4 );
 }
+    
+
+
+
+

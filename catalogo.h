@@ -10,8 +10,10 @@ class Catalogo
     vector <Articulo> articulos;
 
     public:
+    Catalogo();
     int size_catalogo();
-    void busca_objetos ();
+    Articulo get_articulo(int i);
+    int in_stock(int art, int cant);
     void agregar_articulo( Articulo a );
     void actualizar_stock(int art, int pedido);
     void draw_catalogo();

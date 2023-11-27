@@ -11,18 +11,17 @@ using std::array;
 
 class Carrito
 {
+    
     private:
     vector <Articulo> art_carrito;
     vector <int> cantidad_art;
     float precio_final = 0;
     
-
     public:
-    void al_carrito( Articulo art, int cantidad);
+    void al_carrito( Articulo art, int cant);
     float calcular_precios(int i);
     float precio_total();
     void draw_carrito();
-    void finalizar_compra();
 
 };
 

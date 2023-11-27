@@ -10,14 +10,14 @@ using std::cout;
 using std:: endl;
 
 
-void Carrito :: al_carrito(Articulo art, int cantidad)
+void Carrito :: al_carrito(Articulo art, int cant)
 {
     int contador = 0;
     for (int i = 0; i < (art_carrito.size()); i++ )
     {
         if (art.get_id() == art_carrito[i].get_id())
         {
-            cantidad_art[i] = cantidad_art[i] + cantidad;
+            cantidad_art[i] = cantidad_art[i] + cant;
             
             contador = 1;
         }
@@ -26,7 +26,7 @@ void Carrito :: al_carrito(Articulo art, int cantidad)
     if (contador == 0)
     {
         art_carrito.push_back(art);
-        cantidad_art.push_back(cantidad);
+        cantidad_art.push_back(cant);
     }   
 }
 
@@ -51,12 +51,8 @@ void Carrito :: draw_carrito()
 {
     for (int i = 0; i < (art_carrito.size()); i++)
     {
-        cout << art_carrito[i].get_nombre() << " - - - " << cantidad_art[i] << " - - - " << calcular_precios(i) << "$ "<< endl;
+        cout << art_carrito[i].get_nombre() << " - - - " << cantidad_art[i] << " piezas - - - " << calcular_precios(i) << "$ "<< endl;
     }
 }
 
-void Carrito :: finalizar_compra()
-{
-    cout << "El Total de su compra es: " << precio_total() << " $" << endl;
-    cout << "Muchas gracias por su preferencia" << endl;
-}
+
