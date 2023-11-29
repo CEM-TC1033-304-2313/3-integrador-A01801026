@@ -51,7 +51,7 @@ void Carrito :: draw_carrito()
 {
     for (int i = 0; i < (art_carrito.size()); i++)
     {
-        cout << art_carrito[i].get_nombre() << " - - - " << cantidad_art[i] << " piezas - - - " << calcular_precios(i) << "$ "<< endl;
+        cout << art_carrito[i].get_nombre() << " - - - " << cantidad_art[i] << " piezas - - - " << calcular_precios(i) << "$ "<< endl << endl;
     }
 }
 

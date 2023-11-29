@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="xktuOcfVAkyBoNHO14XV" name="Página-1">
-        <mxGraphModel dx="840" dy="1734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="294" dy="867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -29,7 +29,7 @@
                     <mxGeometry y="98" width="270" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="Tienda" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-                    <mxGeometry x="114" y="-1" width="240" height="160" as="geometry"/>
+                    <mxGeometry x="114" y="-1" width="240" height="208" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="- catalogo: Catalogo&#10;- Carrito_de_compras: Carrito" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
                     <mxGeometry y="26" width="240" height="44" as="geometry"/>
@@ -37,8 +37,8 @@
                 <mxCell id="23" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="21" vertex="1">
                     <mxGeometry y="70" width="240" height="8" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="+ display_menu(): void&#10;+ redireccionar_menu(int i ): void&#10;+ modificar_stocks(int art, int cant): void&#10;+ actualizar_tienda(int art, int cant): void&#10;+ void finalizar_compra();" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
-                    <mxGeometry y="78" width="240" height="82" as="geometry"/>
+                <mxCell id="24" value="+ Tienda()&#10;+ display_menu(): void&#10;+ menu_opt1(): void&#10;+ menu_opt2(): void&#10;+ menu_opt3(): void&#10;+ modificar_stocks(int art, int cant): void&#10;+ actualizar_tienda(int art, int cant): void&#10;+ void finalizar_compra();" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="21" vertex="1">
+                    <mxGeometry y="78" width="240" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="34" value="Articulo" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
                     <mxGeometry x="426" y="253" width="240" height="250" as="geometry"/>

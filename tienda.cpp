@@ -10,6 +10,11 @@ using std::cin;
 using std::endl;
 
 
+Tienda :: Tienda()
+{
+    activar_tienda();
+}
+
 void Tienda :: display_menu()
 {
     cout << "- - - - - - MENU PRINCIPAL - - - - - - " << endl << endl;
@@ -20,25 +25,82 @@ void Tienda :: display_menu()
     cout << "Selecciona alguna opción: ";
 }
 
-void Tienda :: redireccionar_menu(int i)
+void Tienda :: activar_tienda()
 {
-    if (i == 1)
+    int seleccion_menu = 0;
+    do
+    {
+        display_menu();
+        cin >> seleccion_menu;
+
+        if (seleccion_menu == 1)
+        {
+            menu_opt1();
+            continue;
+
+        }
+
+        if (seleccion_menu == 2)
+        {
+            menu_opt2();
+            continue;
+        
+        }
+
+        if (seleccion_menu == 3)
+        {
+            menu_opt3();
+            break;
+        }
+
+    } while ( seleccion_menu != 4 );
+}
+
+
+void Tienda :: menu_opt1()
+{
+    int end_while = -1;
+    do 
     {
         cout << " - - - - - - Seleccionar Producto - - - - - - " << endl << endl;
         catalogo.draw_catalogo();
-        cout << endl;
-    }
-    
-    if ( i == 2)
+        cout << endl; 
+        int art;
+        int cant;
+        cout << "Producto a comprar (0 para cancelar): ";
+        cin >> art; 
+        cout << "Cantidad a comprar (0 para cancelar): ";
+        cin >> cant;
+        end_while = cant;
+        cout << "\033[2J\033[1;1H";
+        modificar_stocks((art-1), cant);
+        if ((art == 0) || (cant == 0))
+        {
+            end_while = 0 ;
+        }
+    } while (end_while != 0);
+}
+
+
+void Tienda :: menu_opt2()
+{
+    cout << "\033[2J\033[1;1H";
+    string a_menu = "vacio";
+    cout << " - - - - Carrito de Compras - - - - " << endl << endl;
+    Carrito_de_compras.draw_carrito();
+
+    while (a_menu != "si")
     {
-        cout << " - - - - Carrito de Compras - - - - " << endl;
-        Carrito_de_compras.draw_carrito();
+        cout << "¿Regresar a menu? (Ingresar si): ";
+        cin >> a_menu;
     }
-    
-    if (i == 3)
-    {
-        finalizar_compra();
-    }
+    cout << "\033[2J\033[1;1H";
+}
+
+
+void Tienda :: menu_opt3()
+{
+    finalizar_compra();
 }
 
 void Tienda :: modificar_stocks(int art, int cant)
@@ -51,8 +113,8 @@ void Tienda :: modificar_stocks(int art, int cant)
         }
         else 
         {
-            cout << "No hay suficiente stock, escoga otros valores" << endl;
-            }    
+            cout << " | No hay suficiente stock, escoga otros valores | " << endl << endl;
+        }    
     }
    
 }
@@ -66,6 +128,9 @@ void Tienda :: actualizar_tienda(int art, int cant)
 
 void Tienda :: finalizar_compra()
 {
-    cout << endl << "El Total de su compra es: " << Carrito_de_compras.precio_total() << " $" << endl <<endl;
-    cout << "Muchas gracias por su preferencia en La Tienda Joaquín" << endl;
+    cout << endl << endl << "El Total de su compra es: " << Carrito_de_compras.precio_total() << " $" << endl << endl;
+    cout << "Muchas gracias por su preferencia en La Tienda Joaquín" << endl << endl << endl;
 }
+
+
+    

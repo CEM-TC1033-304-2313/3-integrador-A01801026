@@ -7,8 +7,6 @@ using std:: stoi; // a int
 using std::cout;
 using std::endl;
 
-
-
 Articulo :: Articulo(string i, string n,  string p, string s)
 {
     set_id(i);
